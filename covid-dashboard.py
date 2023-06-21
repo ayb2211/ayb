@@ -20,7 +20,7 @@ df=pd.read_excel('owid-covid-data.xlsx', sheet_name='Sheet1')
 
 
 st.sidebar.header("Please filter")
-continent=st.sidebar.multiselect(
+continent=st.sidebar.select(
     "Select Continent",
      options=df["continent"].unique(),
      default=df["continent"].unique(),
