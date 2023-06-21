@@ -18,13 +18,10 @@ df=pd.read_excel('owid-covid-data.xlsx', sheet_name='Sheet1')
 
 #side bar
 
-cons= df["continent"].unique()
-
 st.sidebar.header("Please filter")
 continent=st.sidebar.selectbox(
     "Select Continent",
-     options=cons,
-     default=df["continent"].unique(),
+     df["continent"].unique()
 )
 all_options = st.checkbox("Select all options")
 
