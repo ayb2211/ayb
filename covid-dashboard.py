@@ -40,4 +40,4 @@ df_selection=df.query(
     "Continent==@continent& Location==@location & Construction ==@construction"
 )
 
-sideBar()
+
