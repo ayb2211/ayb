@@ -28,12 +28,6 @@ all_options = st.sidebar.checkbox("Select all options")
 if all_options:
     continent = df["continent"].unique()
 
-continent
-
-
-
-df_selection=df.query(
-    "Continent==@continent& Location==@location & Construction ==@construction"
-)
+st.write('You selected:', continent)
 
 
