@@ -23,21 +23,14 @@ continent=st.sidebar.selectbox(
     "Select Continent",
      df["continent"].unique()
 )
-all_options = st.checkbox("Select all options")
+all_options = st.sidebar.checkbox("Select all options")
 
 if all_options:
     continent = df["continent"].unique()
 
-location=st.sidebar.multiselect(
-    "Select Location",
-     options=df["location"].unique(),
-     default=df["location"].unique(),
-)
-construction=st.sidebar.multiselect(
-    "Select Construction",
-     options=df["Construction"].unique(),
-     default=df["Construction"].unique(),
-)
+continent
+
+
 
 df_selection=df.query(
     "Continent==@continent& Location==@location & Construction ==@construction"
