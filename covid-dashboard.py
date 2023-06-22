@@ -26,14 +26,21 @@ df=load_model("owid-covid-data.xlsx")
 st.sidebar.header("Please filter")
 continent=st.sidebar.selectbox(
     "Select Continent",
-    df["continent"].unique()
-     
+    df["continent"].unique()  
 )
-all_options = st.sidebar.checkbox("Select all options", value=True)
-
-if all_options:
+all_options_con = st.sidebar.checkbox("Select all options", value=True)
+if all_options_con:
     continent = df["continent"].unique()
 
+location=st.sidebar.selectbox(
+    "Select Location",
+    df["location"].unique()  
+)
+all_options_loc = st.sidebar.checkbox("Select all options", value=True)
+if all_options_loc:
+    location = df["location"].unique()
+
 st.write('You selected:', continent)
+st.write('You selected:', location)
 
 
