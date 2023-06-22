@@ -29,6 +29,6 @@ if all_options:
     continent = df["continent"].unique()
 
 
-st.write('You selected:', continent.index)
+st.write('You selected:', continent(index))
 
 
