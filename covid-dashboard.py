@@ -17,11 +17,12 @@ with open('style.css')as f:
 df=pd.read_excel('owid-covid-data.xlsx', sheet_name='Sheet1')
 
 #side bar
-
+opt = {df["continent"].unique(), 'ALL'}
 st.sidebar.header("Please filter")
 continent=st.sidebar.selectbox(
     "Select Continent",
-     df["continent"].unique()
+    opt
+     
 )
 all_options = st.sidebar.checkbox("Select all options")
 
