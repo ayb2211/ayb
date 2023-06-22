@@ -32,4 +32,10 @@ if all_options:
 
 st.write('You selected:', continent)
 
+@extra
+def selectbox(*args, **kwargs):
+
+    no_selection_label, _args, _kwargs = _transform_arguments(*args, **kwargs)
+
+    result = st.selectbox(*_args, **_kwargs)
 
