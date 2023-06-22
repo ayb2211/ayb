@@ -27,7 +27,7 @@ all_options = st.sidebar.checkbox("Select all options")
 
 if all_options:
     continent = df["continent"].unique()
-    continent = st.sidebar.selectbox(index=-1)
+    continent=st.sidebar.selectbox("Select Continent", df["continent"].unique(), index=None)
 
 
 st.write('You selected:', continent)
