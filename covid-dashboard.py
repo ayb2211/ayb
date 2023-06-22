@@ -14,9 +14,11 @@ with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 
 @st.cache(allow_output_mutation=True)
- def load_model(model_name):
-     df= pd.read_excel(model_name, sheet_name='Sheet1')
-     return (df)
+def load_model(model_name):
+    df= pd.read_excel(model_name, sheet_name='Sheet1')
+    return (df)
+
+
 #load xlsx file
 df=load_model("owid-covid-data.xlsx")
 
