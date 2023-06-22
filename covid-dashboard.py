@@ -17,7 +17,7 @@ with open('style.css')as f:
 df=pd.read_excel('owid-covid-data.xlsx', sheet_name='Sheet1')
 
 #side bar
-opt = [f"{df["continent"].unique()}", 'ALL']
+opt = [f'{df["continent"].unique()}', 'ALL']
 st.sidebar.header("Please filter")
 continent=st.sidebar.selectbox(
     "Select Continent",
