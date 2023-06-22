@@ -36,7 +36,7 @@ location=st.sidebar.selectbox(
     "Select Location",
     df["location"].unique()  
 )
-all_options_loc = st.sidebar.checkbox("Select all options", value=True)
+all_options_loc = st.sidebar.checkbox("Select all options", value=True, key='ch2')
 if all_options_loc:
     location = df["location"].unique()
 
