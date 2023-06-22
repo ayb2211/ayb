@@ -4,6 +4,7 @@ import plotly.express as px
 from streamlit_option_menu import option_menu
 from numerize.numerize import numerize
 import time
+from streamlit_extras.no_default_selectbox import selectbox
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
 st.subheader("🔔  Analytics Dashboard")
@@ -27,7 +28,6 @@ all_options = st.sidebar.checkbox("Select all options")
 
 if all_options:
     continent = df["continent"].unique()
-    continent=st.sidebar.selectbox("Select Continent", df["continent"].unique(), index=-1)
 
 
 st.write('You selected:', continent)
