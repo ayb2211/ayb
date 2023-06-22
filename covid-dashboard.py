@@ -13,7 +13,7 @@ theme_plotly = None
 with open('style.css')as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html = True)
 
-@st.cache(allow_output_mutation=True)
+@st.cache_data
 def load_model(model_name):
     df= pd.read_excel(model_name, sheet_name='Sheet1')
     return (df)
