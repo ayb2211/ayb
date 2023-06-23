@@ -48,11 +48,11 @@ st.write('You selected:', location)
 
 def cards():
     #compute top analytics
-    total_cases = float(df_selection['total_cases'].sum())
+    total_cases = int(df_selection['total_cases'].sum())
 
     total1=st.columns(5,gap='large')
     with total1:
         st.info('Total Investment',icon="📌")
-        st.metric(label="sum TZS",value=f"{total_investment:,.0f}")
+        st.metric(label="sum TZS",value=total_cases)
 
    
