@@ -50,7 +50,7 @@ def cards():
     #compute top analytics
     total_cases = int(df_selection['total_cases'].sum())
 
-    total1=st.columns(5,gap='large')
+    total1=st.columns(1,gap='large')
     with total1:
         st.info('Total Investment',icon="📌")
         st.metric(label="sum TZS",value=f'{total_cases}')
