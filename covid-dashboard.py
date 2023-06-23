@@ -42,7 +42,7 @@ if all_options_loc:
 
 def cards():
     #compute top analytics
-    total_cases = int(df_selection['total_cases'].sum())
+    total_cases = float(df_selection['total_cases'].sum())
     total1=st.columns(1,gap='large')
     with total1:
         st.info('Total Investment',icon="📌")
