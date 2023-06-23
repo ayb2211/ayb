@@ -40,9 +40,6 @@ all_options_loc = st.sidebar.checkbox("Select all options", value=True, key='ch2
 if all_options_loc:
     location = df["location"].unique()
 
-df_selection=df.query(
-    "continent==@continent & Location==@location"
-)
 st.write('You selected:', continent)
 st.write('You selected:', location)
 
