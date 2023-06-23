@@ -42,7 +42,7 @@ all_options_loc = st.sidebar.checkbox("Select all options", value=True, key='ch2
 if all_options_loc:
     location = df["location"].unique()
 df_filter=df.query(
-    "continent==@continent & location==@location"
+    "continent in @continent & location in @location"
 )
 
 def cards():
