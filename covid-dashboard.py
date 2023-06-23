@@ -41,7 +41,7 @@ if all_options_loc:
     location = df["location"].unique()
 
 df_selection=df.query(
-    "Region==@region & Location==@location"
+    "continent==@continent & Location==@location"
 )
 st.write('You selected:', continent)
 st.write('You selected:', location)
