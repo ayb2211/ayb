@@ -40,15 +40,15 @@ all_options_loc = st.sidebar.checkbox("Select all options", value=True, key='ch2
 if all_options_loc:
     location = df["location"].unique()
 df_filter=df.query(
-    "`continent`==@continent & `location`==@location"
+    "continent==@continent & location==@location"
 )
 
 def cards():
     #compute top analytics
-    total_cases = float(df_filte['total_cases'].sum())
+    total_cases = float(df_filter['total_cases'].sum())
     total1=st.columns(3)
     with total1:
         st.info('Total Cases',icon="📌")
-        st.metric(value=f'{total_cases}')
+        st.metric(value=f"{total_cases}")
 
    
