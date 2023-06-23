@@ -53,6 +53,6 @@ def cards():
     total1=st.columns(5,gap='large')
     with total1:
         st.info('Total Investment',icon="📌")
-        st.metric(label="sum TZS",value=total_cases)
+        st.metric(label="sum TZS",value=f'{total_cases}')
 
    
