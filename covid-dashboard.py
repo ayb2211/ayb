@@ -47,8 +47,8 @@ df_filter=df.query(
 
 def cards():
     #compute top analytics
-    total_cases = float(df_filter['total_cases'].sum())
-    total1=st.columns(3)
+    total_cases = int(df_filter['total_cases'].sum())
+    total1=st.columns(1)
     total1.metric(value=f"{total_cases}")
 
    
