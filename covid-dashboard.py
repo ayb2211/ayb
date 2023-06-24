@@ -46,7 +46,7 @@ df_filter=df.query(
 )
 
 def home() :
-    grouped_rows = df.groupby(['location'])
+    grouped_rows = df.[df['location']=='@location']
     grouped_rows
 
 
