@@ -47,8 +47,7 @@ df_filter=df.query(
 
 def home() :
     grouped_rows = df.groupby(['location'])
-    s1 = int(df_filter[grouped_rows['total_cases']].sum())
-    s1
+    grouped_rows
 
 
 
