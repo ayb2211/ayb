@@ -46,7 +46,7 @@ df_filter=df.query(
 )
 
 def home() :
-    s1 = int(df_filter['total_cases'].sum())
+    s1 = int(df_filter['total_cases'].groupby(["location"]).sum())
     s2 = int(df_filter['new_cases_smoothed'].sum())
     s3 = int(df_filter['total_deaths'].sum())
     s4 = int(df_filter['new_deaths'].sum())
@@ -61,7 +61,7 @@ def home() :
     col4.metric(label="New Deaths", value=f"{s4}")
     #2d row
     col5, col6 = st.columns(2)
-    col5.line_chart(df, x = dates, y = df_filter['total_cases'])
+
 
 
     
