@@ -45,9 +45,10 @@ df_filter=df.query(
     "continent in @continent & location in @location"
 )
 
-
-total_cases = int(df_filter['total_cases'].sum())
-
+def home() :
+    total_cases = int(df_filter['total_cases'].sum())
+    col1, col2, col3 = st.columns(3)
+    col1.metric(label="Total Cases", value=@total_cases)
 total_cases
 
 cards()
