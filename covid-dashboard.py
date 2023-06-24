@@ -61,8 +61,8 @@ def home() :
     col4.metric(label="New Deaths", value=f"{s4}")
     #2d row
     col5, col6 = st.columns(2)
-    col5.line_chart(df, x = dates, y = l1)
-    col5.line_chart(df, x = dates, y = l2)
+    col5.line_chart(df, x = dates, y = df_filter['total_cases'])
+
 
     
 
