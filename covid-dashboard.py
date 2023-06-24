@@ -45,5 +45,5 @@ df_filter=df.query(
     "continent in @continent & location in @location"
 )
 
-print(df.columns)
+df.columns
    
