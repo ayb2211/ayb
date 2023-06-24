@@ -46,7 +46,7 @@ df_filter=df.query(
 )
 
 def home() :
-    grouped_rows = df[df['location']==df_filter['locations']]
+    grouped_rows = df_filter['total_cases'].groupby('location')
     grouped_rows
     
 
