@@ -42,25 +42,12 @@ all_options_loc = st.sidebar.checkbox("Select all options", value=True, key='ch2
 if all_options_loc:
     location = df["location"].unique()
 df_filter=df.query(
-    "continent in @continent & location in @location"
+    "continent in @continent & location in @location groupby"
 )
 
 def home() :
-    s1 = int(df_filter['total_cases'].groupby(["location"]).sum())
-    s2 = int(df_filter['new_cases_smoothed'].sum())
-    s3 = int(df_filter['total_deaths'].sum())
-    s4 = int(df_filter['new_deaths'].sum())
-    l1 = df_filter['total_cases'] + df_filter['new_cases_smoothed']
-    l2 = df_filter['total_deaths'] + df_filter['new_deaths']
-    dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d').dt.date
-    #1st Row
-    col1, col2, col3, col4 = st.columns(4)
-    col1.metric(label="Total Cases", value=f"{s1}")
-    col2.metric(label="New Cases", value=f"{s2}")
-    col3.metric(label="Total Deaths", value=f"{s3}")
-    col4.metric(label="New Deaths", value=f"{s4}")
-    #2d row
-    col5, col6 = st.columns(2)
+    temp=df[df['location']=="@location"]
+    temp
 
 
 
