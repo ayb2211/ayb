@@ -49,7 +49,7 @@ df_filter=df.query(
 total_cases = float(df_filter['total_cases'].sum())
 total1=st.columns(1)
 st.info('Total Investment',icon="📌")
-total1.metric(label="Total Cases", value=numerize(total_cases))
+total1.metric(label="Total Cases", value=f"{total_cases:,.0f}")
 
 cards()
    
