@@ -60,8 +60,10 @@ def home() :
     col3.metric(label="Total Deaths", value=f"{s3}")
     col4.metric(label="New Deaths", value=f"{s4}")
     #2d row
-    
-    dates
+    col5, col6 = st.columns(2)
+    col5.line_chart(df, x = dates, y = l1)
+    col5.line_chart(df, x = dates, y = l2)
+
     
 
 home()
