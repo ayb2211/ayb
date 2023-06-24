@@ -46,9 +46,13 @@ df_filter=df.query(
 )
 
 def home() :
-    total = int(df_filter['total_cases'].sum())
+    total_cases = int(df_filter['total_cases'].sum())
+    new_cases = int(df_filter['new_cases'].sum())
+    total_deaths = int(df_filter['total_deaths'].sum())
     col1, col2, col3 = st.columns(3)
-    col1.metric(label="Total Cases", value=f"{total}")
+    col1.metric(label="Total Cases", value=f"{total_cases}")
+    col2.metric(label="New Cases", value=f"{new_cases}")
+    col3.metric(label="Total Deaths", value=f"{total_deaths}")
 
 
 home()
