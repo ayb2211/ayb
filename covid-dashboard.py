@@ -50,4 +50,6 @@ def cards() :
     total1=st.columns(1)
     with total1:
         total1.metric(label="Total Cases", value=numerize(total_cases))
+
+cards()
    
