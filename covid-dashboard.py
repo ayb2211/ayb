@@ -52,7 +52,7 @@ def home() :
     s4 = int(df_filter['new_deaths'].sum())
     l1 = df_filter['total_cases'] + df_filter['new_cases_smoothed']
     l2 = df_filter['total_deaths'] + df_filter['new_deaths']
-    dates = pd.to_datetime(df_filter['date'], format='%d-%m-%Y')
+    dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d')
     #1st Row
     col1, col2, col3, col4 = st.columns(4)
     col1.metric(label="Total Cases", value=f"{s1}")
