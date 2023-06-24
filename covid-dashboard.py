@@ -42,12 +42,12 @@ all_options_loc = st.sidebar.checkbox("Select all options", value=True, key='ch2
 if all_options_loc:
     location = df["location"].unique()
 df_filter=df.query(
-    "continent in @continent & location in @location"
+    "continent in @continent & location in @location groupby @location"
 )
 
 def home() :
-    temp=df[df['location']=="@location"]
-    temp
+    s1 = int(df_filter['total_cases'].sum())
+    s1
 
 
 
