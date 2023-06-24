@@ -49,7 +49,7 @@ def home() :
     total = int(df_filter['total_cases'].sum())
     col1, col2, col3 = st.columns(3)
     col1.metric(label="Total Cases", value=f"{total}")
-total_cases
+
 
 home()
    
