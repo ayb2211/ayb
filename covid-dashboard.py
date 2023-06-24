@@ -49,10 +49,12 @@ def home() :
     s1 = int(df_filter['total_cases'].sum())
     s2 = int(df_filter['new_cases_smoothed'].sum())
     s3 = int(df_filter['total_deaths'].sum())
-    col1, col2, col3 = st.columns(3)
+    s4 = int(df_filter['new_deaths'].sum())
+    col1, col2, col3, col4 = st.columns(4)
     col1.metric(label="Total Cases", value=f"{s1}")
     col2.metric(label="New Cases", value=f"{s2}")
     col3.metric(label="Total Deaths", value=f"{s3}")
+    col4.metric(label="New Deaths", value=f"{s4}")
 
 
 home()
