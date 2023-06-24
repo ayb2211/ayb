@@ -46,7 +46,7 @@ df_filter=df.query(
 )
 
 
-total_cases = float(df_filter['total_cases'].sum())
+total_cases = int(df_filter['total_cases'].sum())
 
 total_cases
 
