@@ -45,12 +45,11 @@ df_filter=df.query(
     "continent in @continent & location in @location"
 )
 
-def cards() :
-    total_cases = float(df_filter['total_cases'].sum())
-    total1=st.columns(1)
-    with total1:
-        st.info('Total Investment',icon="📌")
-        total1.metric(label="Total Cases", value=numerize(total_cases))
+
+total_cases = float(df_filter['total_cases'].sum())
+total1=st.columns(1)
+st.info('Total Investment',icon="📌")
+total1.metric(label="Total Cases", value=numerize(total_cases))
 
 cards()
    
