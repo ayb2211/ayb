@@ -71,16 +71,17 @@ def home() :
     sampled_data = df.sample(num_points)
     # Create a new plot with a title and axis labels
     # Create an Altair line chart
-    col5.line_chart(sampled_data, x = 'date', y = plot_data, height = plot_height)
-    
-    p = figure(
-                title='simple line example',
-                x_axis_label='x',
-                y_axis_label='y')
 
-    source = ColumnDataSource(data=sampled_data)
-    p.varea(x='date', y1='total_cases', y2='total_deaths', source=source)
-    col6.bokeh_chart(p, use_container_width=True)
+    
+    chart = alt.Chart(sampled_data).mark_line().encode(
+        x='date',
+        y='total_cases',
+    ).properties(
+        width=300, height=200
+    )
+    
+    # Render the chart using Streamlit
+    st.altair_chart(chart, use_container_width=True)
 
 home()
    
