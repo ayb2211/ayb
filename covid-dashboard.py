@@ -4,8 +4,7 @@ import plotly.express as px
 from streamlit_option_menu import option_menu
 from numerize.numerize import numerize
 import time
-from bokeh.plotting import figure
-from bokeh.models import ColumnDataSource
+import altair as alt
 
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
