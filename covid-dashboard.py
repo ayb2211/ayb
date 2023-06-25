@@ -65,8 +65,8 @@ def home() :
     
     #2d row
     col5, col6 = st.columns(2)
-    p_df= df_filter[df_filter['date'], df_filter['total_cases'], df_filter['total_deaths']]
-    p_df
+    p_df= df[['date', 'total_cases', 'total_deaths']
+    st.line_chart(p_df, x = 'date', y = plot_data, height= plot_height)  
 
 home()
    
