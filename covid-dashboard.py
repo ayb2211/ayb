@@ -76,7 +76,7 @@ def home() :
     # Create an Altair line chart
 
     
-    plt.plot(df['date'].values, df['total_cases'].values)
+    plt.plot(df['date'], df['total_cases'])
 
     # Set labels and title
     plt.xlabel('X')
