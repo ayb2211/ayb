@@ -5,11 +5,6 @@ from streamlit_option_menu import option_menu
 from numerize.numerize import numerize
 import time
 import altair as alt
-from bokeh.plotting import figure
-from bokeh.models import ColumnDataSource
-import matplotlib.pyplot as plt
-import plotly.express as px
-import vaex
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
 st.subheader("🔔  Analytics Dashboard")
@@ -72,19 +67,15 @@ def home() :
     col5, col6 = st.columns(2)
     num_points = 1000  # Number of data points to display
     sampled_data = df.sample(num_points)
-    # Create a new plot with a title and axis labels
-    # Create an Altair line chart
-
+    chart = alt.Chart(sampled_data).mark_line().encode(
+        x='date',
+        y='total_cases',
+    ).properties(
+        width=300, height=500
+    )
     
-    plt.plot(df['date'], df['total_cases'])
-
-    # Set labels and title
-    plt.xlabel('X')
-    plt.ylabel('Y')
-    plt.title('Line Chart')
-    
-    # Render the plot using Streamlit
-    st.pyplot()
+    # Render the chart using Streamlit
+    col5.altair_chart(chart, use_container_width=True)
 
 home()
    
