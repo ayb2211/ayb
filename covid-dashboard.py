@@ -80,7 +80,7 @@ def home() :
 
     source = ColumnDataSource(data=sampled_data)
     p.varea(x='date', y1='total_cases', y2='total_deaths', source=source)
-    st.bokeh_chart(p, use_container_width=True)
+    col6.bokeh_chart(p, use_container_width=True)
 
 home()
    
