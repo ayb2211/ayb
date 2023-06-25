@@ -70,7 +70,7 @@ def home() :
     sampled_data = df.sample(num_points)
     # Create a new plot with a title and axis labels
     # Create an Altair line chart
-    st.line_chart(sampled_data, x = 'date', y = plot_data, height = plot_height)
+    col5.line_chart(sampled_data, x = 'date', y = plot_data, height = plot_height)
 
 home()
    
