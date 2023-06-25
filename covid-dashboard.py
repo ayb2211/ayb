@@ -5,7 +5,8 @@ from streamlit_option_menu import option_menu
 from numerize.numerize import numerize
 import time
 from bokeh.plotting import figure
-from bokeh.io import output_notebook
+from bokeh.models import GraphRenderer, Ellipse
+from bokeh.palettes import Spectral8
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
 st.subheader("🔔  Analytics Dashboard")
