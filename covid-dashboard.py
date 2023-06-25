@@ -69,9 +69,13 @@ def home() :
     col5, col6 = st.columns(2)
     p_df= df[['date', 'total_cases', 'total_deaths']]
     # Create a new plot with a title and axis labels
-    p = figure(title="Line Chart", x_axis_label="X", y_axis_label="Y")
-    source = ColumnDataSource(data=df)
-    p.line(x='date', y='total_deaths', source=source, line_width=2)
-    st.bokeh_chart(p, use_container_width=True)
+    # Create an Altair line chart
+    chart = alt.Chart(df).mark_line().encode(
+        x='date',
+        y='total_cases'
+    )
+    
+    # Render the chart using Streamlit
+    st.altair_chart(chart, use_container_width=True)
 home()
    
