@@ -4,9 +4,7 @@ import plotly.express as px
 from streamlit_option_menu import option_menu
 from numerize.numerize import numerize
 import time
-from bokeh.plotting import figure
-from bokeh.models import GraphRenderer, Ellipse
-from bokeh.palettes import Spectral8
+
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
 st.subheader("🔔  Analytics Dashboard")
@@ -47,6 +45,9 @@ if all_options_loc:
 df_filter=df.query(
     "continent in @continent & location in @location"
 )
+st.sidebar.subheader('Line chart parameters')
+plot_data = st.sidebar.multiselect('Select data', ['total_cases', 'total_deaths'], ['total_cases', 'total_deaths'])
+plot_height = st.sidebar.slider('Specify plot height', 200, 500, 250)
 
 def home() :
     s1 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_cases'].sum())
@@ -64,23 +65,7 @@ def home() :
     
     #2d row
     col5, col6 = st.columns(2)
-    p = figure(title="Simple line example", 
-           x_axis_label="Month", 
-           y_axis_label="value")
-
-    # add a line renderer with legend and line thickness
-    p.line(df_filter['date'], 
-           df_filter['total_cases'], 
-           legend_label="BTC", 
-           color = 'blue',
-           line_width=2)
-    st.line_chart(df, x = 'date', y = 'total_cases')
-
-
-    st.bokeh_chart(p)
-
-
-    
+    st.line_chart(df, x = 'date', y = plot_data, height= plot_height)  
 
 home()
    
