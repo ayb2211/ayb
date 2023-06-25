@@ -77,7 +77,7 @@ def home() :
         x='date',
         y='total_cases',
     ).properties(
-        width=300, height=200
+        width=300, height=500
     )
     
     # Render the chart using Streamlit
