@@ -46,7 +46,7 @@ df_filter=df.query(
 )
 
 def home() :
-    grouped_rows = df.groupby('continent').sum()
+    grouped_rows = df.groupby('location').max()
     grouped_rows
     
 
