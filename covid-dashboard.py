@@ -66,7 +66,7 @@ def home() :
     
     #2d row
     col5, col6 = st.columns(2)
-    num_points = 100  # Number of data points to display
+    num_points = 1000  # Number of data points to display
     sampled_data = df.sample(num_points)
     # Create a new plot with a title and axis labels
     # Create an Altair line chart
