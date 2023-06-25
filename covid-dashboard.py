@@ -48,7 +48,7 @@ df_filter=df.query(
 def home() :
     s1 = int(df_filter['new_cases_smoothed'].sum())
     s2 = int(df_filter['new_deaths'].sum())
-    s3 = df[(df['location'].isin(location)) & (df['continent'].isin(continent))].(groupby('location').max()).sum()
+    s3 = df[(df['location'].isin(location)) & (df['continent'].isin(continent))].sum(groupby('location').max())
 
     dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d').dt.date
     #1st Row
