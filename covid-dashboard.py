@@ -55,7 +55,6 @@ def home() :
     s3 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_vaccinations'].sum())
     s4 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['people_vaccinated'].sum())
 
-    dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d').dt.strftime('%Y-%m')
     #1st Row
     col1, col2, col3, col4 = st.columns(4)
     col1.metric(label="Total Cases", value=f"{s1}")
@@ -67,7 +66,7 @@ def home() :
     col5, col6 = st.columns(2)
     num_points = 1000  # Number of data points to display
     sampled_data = df.sample(num_points)
-    dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d').dt.strftime('%Y-%m')
+    st.markdown('### Heatmap')
     chart = alt.Chart(sampled_data).mark_line().encode(
         x='date',
         y='total_cases',
@@ -76,7 +75,7 @@ def home() :
     )
     
     # Render the chart using Streamlit
-    col5.altair_chart(chart, use_container_width=True)
+    col5.altair_chart(chart, use_container_width=False)
 
 home()
    
