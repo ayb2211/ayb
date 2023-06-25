@@ -47,8 +47,7 @@ df_filter=df.query(
     "continent in @continent & location in @location"
 )
 st.sidebar.subheader('Line chart parameters')
-plot_data = st.sidebar.multiselect('Select data', ['total_cases', 'total_deaths'], ['total_cases', 'total_deaths'])
-plot_height = st.sidebar.slider('Specify plot height', 200, 500, 250)
+
 
 def home() :
     s1 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_cases'].sum())
