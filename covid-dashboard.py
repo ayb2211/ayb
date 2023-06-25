@@ -82,6 +82,6 @@ def home() :
         # Group data by continent and calculate the sum of total_deaths
         grouped_data = df_filter.groupby('continent')['total_deaths'].sum().reset_index()
 
-        geouped_data
+        grouped_data
 
 home()
