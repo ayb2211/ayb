@@ -72,6 +72,6 @@ def home() :
     p = figure(title="Line Chart", x_axis_label="X", y_axis_label="Y")
     source = ColumnDataSource(data=df)
     p.line(x='date', y='total_deaths', source=source, line_width=2)
-
+    st.bokeh_chart(p, use_container_width=True)
 home()
    
