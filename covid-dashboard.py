@@ -8,6 +8,7 @@ import altair as alt
 from bokeh.plotting import figure
 from bokeh.models import ColumnDataSource
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
 st.subheader("🔔  Analytics Dashboard")
@@ -74,18 +75,9 @@ def home() :
     # Create an Altair line chart
 
     
-    x = df['date']
-    y = df['total_cases']
-    
-    # Create a line plot using pyplot
-    plt.plot(x, y)
-    
-    # Set labels and title
-    plt.xlabel('X')
-    plt.ylabel('Y')
-    plt.title('Line Chart')
-    
-    # Render the plot using Streamlit
-    st.pyplot()
+    fig = px.line(df, x='date', y='total_cases')
+
+    # Render the chart using Streamlit
+    st.plotly_chart(fig, use_container_width=True)
 home()
    
