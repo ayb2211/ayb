@@ -63,19 +63,20 @@ def home() :
     col4.metric(label="People Vaccinated", value=f"{s4}")
     
     #2d row
-    col5, col6 = st.columns(2)
+    col5, col6 = st.columns((7,3))
     num_points = 1000  # Number of data points to display
     sampled_data = df.sample(num_points)
-    col5.markdown('### Heatmap')
-    chart = alt.Chart(sampled_data).mark_line().encode(
-        x='date',
-        y='total_cases',
-    ).properties(
-        width=300, height=500
-    )
-    
-    # Render the chart using Streamlit
-    col5.altair_chart(chart, use_container_width=True)
+    with col5:
+        st.markdown('### Heatmap')
+        chart = alt.Chart(sampled_data).mark_line().encode(
+            x='date',
+            y='total_cases',
+        ).properties(
+            width=300, height=500
+        )
+        
+        # Render the chart using Streamlit
+        st.altair_chart(chart, use_container_width=True)
 
 home()
    
