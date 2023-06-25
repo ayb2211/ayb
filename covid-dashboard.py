@@ -56,7 +56,7 @@ def home() :
     s3 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_vaccinations'].sum())
     s4 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['people_vaccinated'].sum())
 
-    dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d').dt.date
+    dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d').dt.strftime('%Y-%m')
     #1st Row
     col1, col2, col3, col4 = st.columns(4)
     col1.metric(label="Total Cases", value=f"{s1}")
