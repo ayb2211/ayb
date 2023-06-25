@@ -46,10 +46,10 @@ df_filter=df.query(
 )
 
 def home() :
-    s1 = int(df_filter['total_cases'].max())
-    s2 = int(df_filter['new_cases_smoothed'].sum())
-    s3 = int(df_filter['total_deaths'].max())
-    s4 = int(df_filter['new_deaths'].sum())
+    s1 = int(df_filter['new_cases_smoothed'].sum())
+    s2 = int(df_filter['new_deaths'].sum())
+    s3 = df.groupby('location').loc(df['continent']=location)
+    
     dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d').dt.date
     #1st Row
     col1, col2, col3, col4 = st.columns(4)
