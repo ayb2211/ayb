@@ -69,14 +69,14 @@ def home() :
     
     with col5:
         st.markdown('### Heatmap')
-        chart = alt.Chart(sampled_data).mark_line().encode(
+        chart = alt.Chart(df_filter).mark_line().encode(
             x='date',
             y='total_cases',
         ).properties(
             width=300, height=500
         )
         
-        # Render the chart using Streamlit
+        # Render the chart
         col5.altair_chart(chart, use_container_width=True)
     with col6:
         st.markdown('### Donut')
@@ -88,11 +88,10 @@ def home() :
                                      values=grouped_data['new_deaths'],
                                      hole=0.5)])
 
-        # Set title
-        fig.update_layout(title_text='Total Deaths by Continent')
+        # Set width and height
         fig.update_layout(width=300, height=500)
 
-        # Render the chart using Streamlit
+        # Render the chart
         st.plotly_chart(fig, use_container_width=True)
 
 home()
