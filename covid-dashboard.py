@@ -5,6 +5,7 @@ from streamlit_option_menu import option_menu
 from numerize.numerize import numerize
 import time
 import altair as alt
+from bokeh.plotting import figure
 
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
@@ -72,13 +73,14 @@ def home() :
     # Create an Altair line chart
     col5.line_chart(sampled_data, x = 'date', y = plot_data, height = plot_height)
     
-    chart = alt.Chart(sampled_data).mark_area().encode(
-        x='date',
-        y='total_cases'
-    )
-    
-    # Render the chart using Streamlit
-    col6.altair_chart(chart, use_container_width=True)
+    p = figure(
+                title='simple line example',
+                x_axis_label='x',
+                y_axis_label='y')
+
+    source = ColumnDataSource(data=sampled_data)
+    p.varea(x='date', y1='total_cases', y2='total_deaths', source=source)
+    st.bokeh_chart(p, use_container_width=True)
 
 home()
    
