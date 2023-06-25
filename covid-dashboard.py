@@ -55,7 +55,8 @@ def home() :
     col1, col2, col3, col4 = st.columns(4)
     col1.metric(label="Total Cases", value=f"{s1}")
     col2.metric(label="New Cases", value=f"{s2}")
-    s3['total_cases'].sum()
+    col3.metric(label="New Cases", value=f"{s3['total_cases'].sum()}")
+    
     
     #2d row
     col5, col6 = st.columns(2)
