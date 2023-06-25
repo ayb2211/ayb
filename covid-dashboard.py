@@ -73,7 +73,7 @@ def home() :
     # Create an Altair line chart
 
     
-    chart = alt.Chart(sampled_data).mark_line().encode(
+    chart = alt.Chart(df).mark_line().encode(
         x='date',
         y='new_cases_smoothed',
     ).properties(
