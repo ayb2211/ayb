@@ -69,7 +69,7 @@ def home() :
            y_axis_label="value")
 
     # add a line renderer with legend and line thickness
-    p.line(dates, 
+    p.line(df_filter['date'], 
            df_filter['total_cases'], 
            legend_label="BTC", 
            color = 'blue',
