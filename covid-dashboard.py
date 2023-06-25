@@ -70,13 +70,7 @@ def home() :
     sampled_data = df.sample(num_points)
     # Create a new plot with a title and axis labels
     # Create an Altair line chart
-    chart = alt.Chart(sampled_data).mark_line().encode(
-        x='date',
-        y='total_cases'
-    )
-    
-    # Render the chart using Streamlit
-    st.altair_chart(chart, use_container_width=True)
-    dates.drop_duplicates()
+    st.line_chart(sampled_data, x = 'date', y = plot_data, height = plot_height)
+
 home()
    
