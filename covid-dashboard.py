@@ -78,7 +78,7 @@ def home() :
         )
         
         # Render the chart using Streamlit
-        st.altair_chart(chart, use_container_width=True)
+        col5.altair_chart(chart, use_container_width=True)
     with col6:
         st.markdown('### Donut')
         # Group data by continent and calculate the sum of total_deaths
