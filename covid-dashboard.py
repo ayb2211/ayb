@@ -92,6 +92,6 @@ def home() :
         fig.update_layout(width=300, height=400)
 
         # Render the chart using Streamlit
-        st.plotly_chart(fig)
+        st.plotly_chart(fig, use_container_width=True)
 
 home()
