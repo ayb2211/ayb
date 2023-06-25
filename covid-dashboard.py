@@ -66,7 +66,7 @@ def home() :
     col5, col6 = st.columns(2)
     num_points = 1000  # Number of data points to display
     sampled_data = df.sample(num_points)
-    st.markdown('### Heatmap')
+    col5.markdown('### Heatmap')
     chart = alt.Chart(sampled_data).mark_line().encode(
         x='date',
         y='total_cases',
@@ -75,7 +75,7 @@ def home() :
     )
     
     # Render the chart using Streamlit
-    col5.altair_chart(chart, use_container_width=False)
+    col5.altair_chart(chart, use_container_width=True)
 
 home()
    
