@@ -16,7 +16,7 @@ with open('style.css')as f:
 
 @st.cache_data
 def load_model(model_name):
-    df= pd.read_excel(model_name, sheet_name='Sheet1')
+    df= pd.read_excel(model_name, sheet_name='Sheet1', parse_dates=['date'])
     return (df)
 
 
@@ -67,6 +67,7 @@ def home() :
     col5, col6 = st.columns(2)
     num_points = 1000  # Number of data points to display
     sampled_data = df.sample(num_points)
+    dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d').dt.strftime('%Y-%m')
     chart = alt.Chart(sampled_data).mark_line().encode(
         x='date',
         y='total_cases',
