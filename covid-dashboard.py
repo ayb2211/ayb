@@ -46,9 +46,9 @@ df_filter=df.query(
 )
 
 def home() :
-    grouped_rows = int(f"{df.groupby('location').max()}")
-    grouped_rows
-    
+    grouped_rows = df.groupby('location').max()
+    r1 = grouped_rows['total_cases'].query("continent in @continent & location in @location")
+    r1
 
 
     
