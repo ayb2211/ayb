@@ -7,6 +7,7 @@ import time
 import altair as alt
 from bokeh.plotting import figure
 from bokeh.models import ColumnDataSource
+import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
 st.subheader("🔔  Analytics Dashboard")
