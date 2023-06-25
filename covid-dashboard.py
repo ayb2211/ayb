@@ -68,10 +68,10 @@ def home() :
     sampled_data = df_filter.sample(num_points)
     
     with col5:
-        st.markdown('### Heatmap')
-        chart = alt.Chart(df_filter).mark_line().encode(
+        st.markdown('### New cases by date')
+        chart = alt.Chart(sampled_data).mark_line().encode(
             x='date',
-            y='total_cases',
+            y='new_cases_smoothed',
         ).properties(
             width=300, height=500
         )
@@ -79,7 +79,7 @@ def home() :
         # Render the chart
         col5.altair_chart(chart, use_container_width=True)
     with col6:
-        st.markdown('### Donut')
+        st.markdown('### Total deaths by continent')
         # Group data by continent and calculate the sum of total_deaths
         grouped_data = df_filter.groupby('continent')['new_deaths'].sum().reset_index()
 
