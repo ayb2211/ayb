@@ -46,9 +46,20 @@ df_filter=df.query(
 )
 
 def home() :
-    grouped_rows = df.groupby('location').max()
-    r1 = grouped_rows['total_cases'].query("continent in @continent & location in @location")
-    r1
+    s1 = int(df_filter['total_cases'].max())
+    s2 = int(df_filter['new_cases_smoothed'].sum())
+    s3 = int(df_filter['total_deaths'].max())
+    s4 = int(df_filter['new_deaths'].sum())
+    dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d').dt.date
+    #1st Row
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric(label="Total Cases", value=f"{s1}")
+    col2.metric(label="New Cases", value=f"{s2}")
+    col3.metric(label="Total Deaths", value=f"{s3}")
+    col4.metric(label="New Deaths", value=f"{s4}")
+    #2d row
+    col5, col6 = st.columns(2)
+
 
 
     
