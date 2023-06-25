@@ -74,12 +74,18 @@ def home() :
     # Create an Altair line chart
 
     
-    sns.set(style="whitegrid")
-    plot = sns.kdeplot(data=df)
-
+    x = df['date']
+    y = df['total_cases']
+    
+    # Create a line plot using pyplot
+    plt.plot(x, y)
+    
+    # Set labels and title
+    plt.xlabel('X')
+    plt.ylabel('Y')
+    plt.title('Line Chart')
     
     # Render the plot using Streamlit
-    st.pyplot(plot.figure, use_container_width=True)
-
+    st.pyplot()
 home()
    
