@@ -46,7 +46,7 @@ df_filter=df.query(
 )
 
 def home() :
-    grouped_rows = int(df.groupby('location').max())
+    grouped_rows = int(f'{df.groupby('location').max()}')
     grouped_rows
     
 
