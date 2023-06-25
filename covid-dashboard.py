@@ -78,7 +78,7 @@ def home() :
     )
     
     # Render the chart using Streamlit
-    st.altair_chart(chart, use_container_width=True)
+    col6.altair_chart(chart, use_container_width=True)
 
 home()
    
