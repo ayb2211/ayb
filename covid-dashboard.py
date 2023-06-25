@@ -72,7 +72,7 @@ def home() :
     # Create an Altair line chart
     chart = alt.Chart(sampled_data).mark_line().encode(
         x='date',
-        y='new_cases_smoothened'
+        y='new_cases_smoothed'
     )
     
     # Render the chart using Streamlit
