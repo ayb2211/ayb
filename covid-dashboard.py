@@ -64,7 +64,7 @@ def home() :
     col4.metric(label="People Vaccinated", value=f"{s4}")
     
     #2d row
-    col5, col6 = st.columns((7,3))
+    col5, col6 = st.columns((5,3))
     num_points = 1000  # Number of data points to display
     sampled_data = df.sample(num_points)
     with col5:
