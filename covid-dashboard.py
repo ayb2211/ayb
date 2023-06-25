@@ -57,7 +57,7 @@ def home() :
     col1.metric(label="Total Cases", value=f"{s1}")
     col2.metric(label="Total Deaths", value=f"{s2}")
     col3.metric(label="Total Vaccinations", value=f"{s3}")
-    col3.metric(label="People Vaccinated", value=f"{s4}")
+    col4.metric(label="People Vaccinated", value=f"{s4}")
     
     
     #2d row
