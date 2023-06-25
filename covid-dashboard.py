@@ -55,7 +55,7 @@ def home() :
     col1, col2, col3, col4 = st.columns(4)
     col1.metric(label="Total Cases", value=f"{s1}")
     col2.metric(label="New Cases", value=f"{s2}")
-    col3.metric(label="New Cases", value=f"{int(s3}")
+    col3.metric(label="New Cases", value=f"{int(s3)}")
     
     
     #2d row
