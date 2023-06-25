@@ -75,7 +75,7 @@ def home() :
     
     chart = alt.Chart(sampled_data).mark_line().encode(
         x='date',
-        y='total_cases',
+        y='new_cases',
     ).properties(
         width=300, height=500
     )
