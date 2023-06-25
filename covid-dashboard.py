@@ -59,10 +59,21 @@ def home() :
     col3.metric(label="Total Vaccinations", value=f"{s3}")
     col4.metric(label="People Vaccinated", value=f"{s4}")
     
-    
     #2d row
     col5, col6 = st.columns(2)
+    p = figure(title="Simple line example", 
+           x_axis_label="Month", 
+           y_axis_label="value")
 
+    # add a line renderer with legend and line thickness
+    p.line(dates, 
+           df_filter['total_cases'], 
+           legend_label="BTC", 
+           color = 'blue',
+           line_width=2)
+
+
+    st.bokeh_chart(p)
 
 
     
