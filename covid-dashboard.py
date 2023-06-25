@@ -64,7 +64,7 @@ def home() :
     st.markdown("""---""")
     
     #2d row
-    col5, col6 = st.columns((5,3), gap='small')
+    col5, col6 = st.columns((5,3), gap='large')
     num_points = 1000  # Number of data points to display
     sampled_data = df.sample(num_points)
     
