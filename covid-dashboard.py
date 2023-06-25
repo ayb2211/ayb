@@ -74,7 +74,7 @@ def home() :
            legend_label="BTC", 
            color = 'blue',
            line_width=2)
-    st.line_chart(seattle_weather, x = dates, y = df_filter['total_cases'])
+    st.line_chart(df, x = dates, y = df_filter['total_cases'])
 
 
     st.bokeh_chart(p)
