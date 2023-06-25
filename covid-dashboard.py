@@ -66,10 +66,11 @@ def home() :
     
     #2d row
     col5, col6 = st.columns(2)
-    p_df= df[['date', 'total_cases', 'total_deaths']]
+    num_points = 100  # Number of data points to display
+    sampled_data = df.sample(num_points)
     # Create a new plot with a title and axis labels
     # Create an Altair line chart
-    chart = alt.Chart(df).mark_line().encode(
+    chart = alt.Chart(sampled_data).mark_line().encode(
         x='date',
         y='total_cases'
     )
