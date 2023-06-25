@@ -70,8 +70,8 @@ def home() :
     p_df= df[['date', 'total_cases', 'total_deaths']]
     # Create a new plot with a title and axis labels
     p = figure(title="Line Chart", x_axis_label="X", y_axis_label="Y")
-    source = ColumnDataSource(data=p_df)
-    p.line(x='date', y='total_death', source=source, line_width=2)
+    source = ColumnDataSource(data=df)
+    p.line(x='date', y='total_deaths', source=source, line_width=2)
 
 home()
    
