@@ -9,8 +9,7 @@ from bokeh.plotting import figure
 from bokeh.models import ColumnDataSource
 import matplotlib.pyplot as plt
 import plotly.express as px
-import datashader as ds
-import datashader.transfer_functions as tf
+import vaex
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
 st.subheader("🔔  Analytics Dashboard")
@@ -77,15 +76,15 @@ def home() :
     # Create an Altair line chart
 
     
-    cvs = ds.Canvas(plot_width=800, plot_height=400)
+    plt.plot(df['date'].values, df['total_cases'].values)
 
-    # Aggregate the data on the canvas
-    agg = cvs.line(df, 'date', 'total_cases')
+    # Set labels and title
+    plt.xlabel('X')
+    plt.ylabel('Y')
+    plt.title('Line Chart')
     
-    # Render the aggregated chart using transfer functions
-    img = tf.shade(agg)
-    
-    # Render the image using Streamlit
-    st.image(img, use_column_width=True)
+    # Render the plot using Streamlit
+    st.pyplot()
+
 home()
    
