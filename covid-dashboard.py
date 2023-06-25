@@ -71,6 +71,14 @@ def home() :
     # Create a new plot with a title and axis labels
     # Create an Altair line chart
     col5.line_chart(sampled_data, x = 'date', y = plot_data, height = plot_height)
+    
+    chart = alt.Chart(sampled_data).mark_area().encode(
+        x='date',
+        y='total_cases'
+    )
+    
+    # Render the chart using Streamlit
+    st.altair_chart(chart, use_container_width=True)
 
 home()
    
