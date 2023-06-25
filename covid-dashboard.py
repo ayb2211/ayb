@@ -5,6 +5,7 @@ from streamlit_option_menu import option_menu
 from numerize.numerize import numerize
 import time
 import altair as alt
+import plotly.graph_objects as go
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
 st.subheader("🔔  Analytics Dashboard")
