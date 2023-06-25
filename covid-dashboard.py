@@ -91,7 +91,7 @@ def home() :
 
         # Set title
         fig.update_layout(title_text='Total Deaths by Continent')
-        fig.update_layout(width=300, height=400)
+        fig.update_layout(width=300, height=500)
 
         # Render the chart using Streamlit
         st.plotly_chart(fig, use_container_width=True)
