@@ -46,7 +46,6 @@ if all_options_loc:
 df_filter=df.query(
     "continent in @continent & location in @location"
 )
-st.sidebar.subheader('Line chart parameters')
 
 
 def home() :
