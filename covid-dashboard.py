@@ -8,7 +8,7 @@ import altair as alt
 import plotly.graph_objects as go
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
-st.subheader("🔔  Analytics Dashboard")
+st.subheader("Analytics Dashboard")
 st.markdown("##")
 theme_plotly = None
 
