@@ -22,3 +22,4 @@ scikit-learn==1.2.2
 seaborn==0.12.2
 pandas-profiling==3.2.0
 bokeh==2.4.3
+vaex==4.16.0
