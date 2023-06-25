@@ -77,5 +77,6 @@ def home() :
     
     # Render the chart using Streamlit
     st.altair_chart(chart, use_container_width=True)
+    dates
 home()
    
