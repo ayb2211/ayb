@@ -77,6 +77,19 @@ def home() :
         
         # Render the chart using Streamlit
         st.altair_chart(chart, use_container_width=True)
-
+    with col6:
+        # Group data by continent and calculate the sum of total_deaths
+        grouped_data = df.groupby('continent')['total_deaths'].sum().reset_index()
+        
+        # Create a donut chart using Plotly
+        fig = go.Figure(df=[go.Pie(labels=grouped_data['continent'],
+                                     values=grouped_data['total_deaths'],
+                                     hole=0.5)])
+        
+        # Set title
+        fig.update_layout(title_text='Total Deaths by Continent')
+        
+        # Render the chart using Streamlit
+        st.plotly_chart(fig)
 home()
    
