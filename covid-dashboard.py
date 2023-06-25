@@ -65,7 +65,7 @@ def home() :
     
     #2d row
     col5, col6 = st.columns(2)
-    p_df= df[df['date'], df['total_cases'], df['total_deaths']]
+    p_df= df_filter[df_filter['date'], df_filter['total_cases'], df_filter['total_deaths']]
     p_df
 
 home()
