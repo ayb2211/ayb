@@ -93,4 +93,4 @@ def home() :
         # Render the chart using Streamlit
         st.plotly_chart(fig)
 
-   
+home()
