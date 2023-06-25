@@ -62,7 +62,7 @@ def home() :
     col2.metric(label="Total Deaths", value=f"{s2}")
     col3.metric(label="Total Vaccinations", value=f"{s3}")
     col4.metric(label="People Vaccinated", value=f"{s4}")
-    st.markdown("""---""")
+    st.markdown("""   """)
     
     #2d row
     col5, col6 = st.columns((7,3), gap='large')
