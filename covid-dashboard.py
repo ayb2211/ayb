@@ -4,9 +4,8 @@ import plotly.express as px
 from streamlit_option_menu import option_menu
 from numerize.numerize import numerize
 import time
-from pyqtgraph.Qt import QtGui, QtCore
-import pyqtgraph as pg
-
+from bokeh.plotting import figure
+from bokeh.models import ColumnDataSource
 
 
 st.set_page_config(page_title="Dashboard",page_icon="🌍",layout="wide")
@@ -69,7 +68,10 @@ def home() :
     #2d row
     col5, col6 = st.columns(2)
     p_df= df[['date', 'total_cases', 'total_deaths']]
-    st.line_chart(p_df, x = 'date', y = plot_data, height= plot_height)  
+    # Create a new plot with a title and axis labels
+    p = figure(title="Line Chart", x_axis_label="X", y_axis_label="Y")
+    source = ColumnDataSource(data=p_df)
+    p.line(x='date', y='total_death', source=source, line_width=2)
 
 home()
    
