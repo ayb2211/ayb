@@ -46,16 +46,16 @@ df_filter=df.query(
 )
 
 def home() :
-    s1 = int(df_filter['new_cases_smoothed'].sum())
-    s2 = int(df_filter['new_deaths'].sum())
-    s3 = df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_cases'].sum()
+    s1 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_cases'].sum())
+    s2 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_deaths'].sum())
+    s3 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_vaccinations'].sum())
 
     dates = pd.to_datetime(df_filter['date'], format='%Y-%m-%d').dt.date
     #1st Row
     col1, col2, col3, col4 = st.columns(4)
     col1.metric(label="Total Cases", value=f"{s1}")
-    col2.metric(label="New Cases", value=f"{s2}")
-    col3.metric(label="New Cases", value=f"{int(s3)}")
+    col2.metric(label="Total Deaths", value=f"{s2}")
+    col3.metric(label="Total Vaccinations", value=f"{s3}")
     
     
     #2d row
