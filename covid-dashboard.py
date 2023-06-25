@@ -73,15 +73,12 @@ def home() :
     # Create an Altair line chart
 
     
-    chart = alt.Chart(df).mark_line().encode(
-        x='date',
-        y='new_cases_smoothed',
-    ).properties(
-        width=300, height=500
-    )
+    sns.set(style="whitegrid")
+    plot = sns.kdeplot(data=df)
+
     
-    # Render the chart using Streamlit
-    st.altair_chart(chart, use_container_width=True)
+    # Render the plot using Streamlit
+    st.pyplot(plot.figure, use_container_width=True)
 
 home()
    
