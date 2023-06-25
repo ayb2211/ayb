@@ -82,15 +82,6 @@ def home() :
         # Group data by continent and calculate the sum of total_deaths
         grouped_data = df_filter.groupby('continent')['total_deaths'].sum().reset_index()
 
-        # Create a donut chart using Plotly
-        fig = go.Figure(data=[go.Pie(labels=grouped_data['continent'],
-                                     values=grouped_data['total_deaths'],
-                                     hole=0.5)])
-
-        # Set title
-        fig.update_layout(title_text='Total Deaths by Continent')
-
-        # Render the chart using Streamlit
-        st.plotly_chart(fig)
+        geouped_data
 
 home()
