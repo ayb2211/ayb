@@ -51,11 +51,10 @@ df_filter=df.query(
 def home() :
     s1 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_cases'].sum())
     s2 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_deaths'].sum())
-    s3 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['total_vaccinations'].sum())
     s4 = int(df[(df['location'].isin(location)) & (df['continent'].isin(continent))].groupby('location').max()['people_vaccinated'].sum())
 
     #1st Row
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col4 = st.columns(3)
     col1.metric(label="Total Cases", value=f"{s1}")
     col2.metric(label="Total Deaths", value=f"{s2}")
     col3.metric(label="Total Vaccinations", value=f"{s3}")
